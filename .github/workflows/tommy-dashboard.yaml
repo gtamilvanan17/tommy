@@ -31,12 +31,13 @@ jobs:
 
       # Step 4: Build the React app
       - name: Build React app
-        run: npm run build
+        # run: npm run build
+        run: npm run deploy
 
       # Step 5: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages  # The branch where your React app will be deployed
-          folder: build     # The folder to deploy (React build output)
-          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     branch: gh-pages  # The branch where your React app will be deployed
+      #     folder: build     # The folder to deploy (React build output)
+      #     token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
