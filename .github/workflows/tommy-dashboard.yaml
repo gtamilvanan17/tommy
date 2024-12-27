@@ -6,7 +6,7 @@ on:
       - master  # Trigger deployment on push to the main branch
 
 permissions:
-  contents: read # Read access to repo contents
+  contents: write # Read access to repo contents
   pages: write # Write access to GitHub Pages for deployment
   id-token: write # Allow to generate a GitHub Pages deployment token
 
