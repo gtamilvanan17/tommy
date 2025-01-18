@@ -2,7 +2,7 @@ name: 🚀 Deploy website on push to main
 on:
   push:
     branches:
-      - main  # Adjust branch as needed
+      - master  # Adjust branch as needed
 jobs:
   web-deploy:
     name: 🎉 Deploy the website

@@ -3,7 +3,7 @@ name: Tommy Dashboard App
 on:
   push:
     branches:
-      - test  # Trigger deployment on push to the main branch
+      - master  # Trigger deployment on push to the main branch
 
 permissions:
   contents: write # Read access to repo contents
