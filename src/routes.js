@@ -39,6 +39,7 @@ Coded by www.creative-tim.com
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
+import Custom from "layouts/custom";
 // import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
@@ -104,6 +105,14 @@ const routes = [
     icon: <Icon fontSize="small">login</Icon>,
     route: "/authentication/sign-in",
     component: <SignIn />,
+  },
+  {
+    type: "collapse",
+    name: "Link Index",
+    key: "custom",
+    icon: <Icon fontSize="small">category</Icon>,
+    route: "/custom",
+    component: <Custom />,
   },
   // {
   //   type: "collapse",

@@ -1,0 +1,33 @@
+name: 🚀 Deploy website on push to main
+on:
+  push:
+    branches:
+      - main  # Adjust branch as needed
+jobs:
+  web-deploy:
+    name: 🎉 Deploy the website
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    - name: Use Node.js 18
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+      
+    - name: 🚚 Install dependencies
+      run: npm install
+
+    - name: 🔨 Build and export the Project
+      run: |
+        npm run build
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTPHOST }}
+        username: ${{ secrets.FTPUSER }}
+        password: ${{ secrets.FTPPASSWORD }}
+        local-dir: build/
+        server-dir: /htdocs/
