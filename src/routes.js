@@ -40,6 +40,7 @@ import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import Custom from "layouts/custom";
+import Devops from "layouts/devops";
 // import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
@@ -113,6 +114,14 @@ const routes = [
     icon: <Icon fontSize="small">category</Icon>,
     route: "/custom",
     component: <Custom />,
+  },
+  {
+    type: "collapse",
+    name: "DevOps",
+    key: "devops",
+    icon: <Icon fontSize="small">wifi</Icon>,
+    route: "/devops",
+    component: <Devops />,
   },
   // {
   //   type: "collapse",

@@ -1,0 +1,195 @@
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Button,
+  Grid,
+  Box,
+  Rating,
+  Chip,
+  LinearProgress,
+  styled,
+} from "@mui/material";
+import { FiArrowRight } from "react-icons/fi";
+
+// Material Dashboard 2 React components
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+
+const StyledCard = styled(Card)(({ theme }) => ({
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  transition: "transform 0.3s ease-in-out",
+  "&:hover": {
+    transform: "translateY(-5px)",
+  },
+  borderRadius: "16px",
+  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+}));
+
+const StyledButton = styled(Button)({
+  borderRadius: "25px",
+  textTransform: "none",
+  padding: "8px 24px",
+});
+
+const StyledChip = styled(Chip)({
+  borderRadius: "16px",
+  fontWeight: "bold",
+  margin: "4px",
+});
+
+function Devops() {
+  const [programs] = useState([
+    {
+      id: 1,
+      name: "Total Body Transformation",
+      image: "images.unsplash.com/photo-1517836357463-d25dfeac3438",
+      description:
+        "A comprehensive workout program designed to transform your body and improve overall fitness.",
+      duration: "12 weeks",
+      level: "Intermediate",
+      rating: 4.5,
+      progress: 75,
+    },
+    {
+      id: 2,
+      name: "Core Strength & Conditioning",
+      image: "images.unsplash.com/photo-1571019614242-c5c5dee9f50b",
+      description:
+        "Focus on building core strength and improving overall conditioning through targeted exercises.",
+      duration: "8 weeks",
+      level: "Beginner",
+      rating: 4.8,
+      progress: 30,
+    },
+    {
+      id: 3,
+      name: "Advanced HIIT Program",
+      image: "images.unsplash.com/photo-1549576490-b0b4831ef60a",
+      description:
+        "High-intensity interval training program for maximum calorie burn and endurance building.",
+      duration: "6 weeks",
+      level: "Advanced",
+      rating: 4.7,
+      progress: 50,
+    },
+  ]);
+
+  const getLevelColor = (level) => {
+    switch (level.toLowerCase()) {
+      case "beginner":
+        return "success";
+      case "intermediate":
+        return "warning";
+      case "advanced":
+        return "error";
+      default:
+        return "default";
+    }
+  };
+
+  return (
+    <DashboardLayout>
+      <DashboardNavbar />
+      <Box sx={{ padding: 4, backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ textAlign: "center", marginBottom: 4, fontWeight: "bold" }}
+        >
+          Fitness Programs
+        </Typography>
+        <Grid container spacing={4}>
+          {programs.map((program) => (
+            <Grid item xs={12} sm={6} md={4} key={program.id}>
+              <StyledCard>
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={`https://${program.image}`}
+                  alt={program.name}
+                  sx={{ objectFit: "cover" }}
+                />
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      mb: 2,
+                    }}
+                  >
+                    <Typography variant="h6" component="h2" gutterBottom>
+                      {program.name}
+                    </Typography>
+                    <StyledChip
+                      label={program.level}
+                      color={getLevelColor(program.level)}
+                      size="small"
+                    />
+                  </Box>
+                  <Typography variant="body2" color="text.secondary" paragraph>
+                    {program.description}
+                  </Typography>
+                  <Box sx={{ mb: 2 }}>
+                    <Typography variant="body2" color="text.secondary">
+                      Duration: {program.duration}
+                    </Typography>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mt: 1,
+                      }}
+                    >
+                      <Rating value={program.rating} precision={0.5} readOnly size="small" />
+                      <Typography variant="body2" color="text.secondary">
+                        ({program.rating})
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Box sx={{ mb: 2 }}>
+                    <Typography variant="body2" color="text.secondary" gutterBottom>
+                      Progress
+                    </Typography>
+                    <LinearProgress
+                      variant="determinate"
+                      value={program.progress}
+                      sx={{ height: 8, borderRadius: 4 }}
+                    />
+                  </Box>
+                  <Box sx={{ display: "flex", gap: 2 }}>
+                    <StyledButton
+                      variant="contained"
+                      color="primary"
+                      fullWidth
+                      aria-label={`Join ${program.name} program`}
+                    >
+                      Join Program
+                    </StyledButton>
+                    <StyledButton
+                      variant="outlined"
+                      color="primary"
+                      fullWidth
+                      endIcon={<FiArrowRight />}
+                      aria-label={`View details of ${program.name} program`}
+                    >
+                      View Details
+                    </StyledButton>
+                  </Box>
+                </CardContent>
+              </StyledCard>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </DashboardLayout>
+  );
+}
+
+export default Devops;
