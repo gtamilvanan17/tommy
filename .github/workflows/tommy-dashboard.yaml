@@ -1,9 +1,9 @@
-name: Tommy Dashboard App
+name: 🚀 Deploy website - GitHub
 
 on:
   push:
     branches:
-      - master  # Trigger deployment on push to the main branch
+      - main  # Trigger deployment on push to the main branch
 
 permissions:
   contents: write # Read access to repo contents

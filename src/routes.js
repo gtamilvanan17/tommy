@@ -41,7 +41,7 @@ import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import Custom from "layouts/custom";
 import Devops from "layouts/devops";
-// import RTL from "layouts/rtl";
+import Link from "layouts/link";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
@@ -122,6 +122,14 @@ const routes = [
     icon: <Icon fontSize="small">wifi</Icon>,
     route: "/devops",
     component: <Devops />,
+  },
+  {
+    type: "collapse",
+    name: "Link",
+    key: "link",
+    icon: <Icon fontSize="small">wifi</Icon>,
+    route: "/link",
+    component: <Link />,
   },
   // {
   //   type: "collapse",

@@ -44,7 +44,8 @@ function Devops() {
     {
       id: 1,
       name: "Transformation",
-      image: "images.unsplash.com/photo-1517836357463-d25dfeac3438",
+      image:
+        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "A comprehensive workout program designed to transform your body and improve overall fitness.",
       level: "Intermediate",
@@ -53,7 +54,8 @@ function Devops() {
     {
       id: 2,
       name: "Core Strength",
-      image: "images.unsplash.com/photo-1571019614242-c5c5dee9f50b",
+      image:
+        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Focus on building core strength and improving overall conditioning through targeted exercises.",
       level: "Beginner",
@@ -62,7 +64,38 @@ function Devops() {
     {
       id: 3,
       name: "Advanced HIIT Program",
-      image: "images.unsplash.com/photo-1549576490-b0b4831ef60a",
+      image:
+        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description:
+        "High-intensity interval training program for maximum calorie burn and endurance building.",
+      level: "Advanced",
+      pdf: "sample.pdf",
+    },
+    {
+      id: 1,
+      name: "Transformation",
+      image:
+        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description:
+        "A comprehensive workout program designed to transform your body and improve overall fitness.",
+      level: "Intermediate",
+      pdf: "docs/sample.pdf",
+    },
+    {
+      id: 2,
+      name: "Core Strength",
+      image:
+        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description:
+        "Focus on building core strength and improving overall conditioning through targeted exercises.",
+      level: "Beginner",
+      pdf: "docs/sample.pdf",
+    },
+    {
+      id: 3,
+      name: "Advanced HIIT Program",
+      image:
+        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "High-intensity interval training program for maximum calorie burn and endurance building.",
       level: "Advanced",
