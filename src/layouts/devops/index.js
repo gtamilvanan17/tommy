@@ -8,6 +8,10 @@ import {
   Grid,
   Box,
   Chip,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
   styled,
 } from "@mui/material";
 
@@ -49,7 +53,7 @@ function Devops() {
       description:
         "A comprehensive workout program designed to transform your body and improve overall fitness.",
       level: "Intermediate",
-      pdf: "docs/sample.pdf",
+      pdf: "docs/sample.pdf", // Replace with the actual Google Drive file ID
     },
     {
       id: 2,
@@ -59,7 +63,7 @@ function Devops() {
       description:
         "Focus on building core strength and improving overall conditioning through targeted exercises.",
       level: "Beginner",
-      pdf: "docs/sample.pdf",
+      pdf: "docs/sample.pdf", // Replace with the actual Google Drive file ID
     },
     {
       id: 3,
@@ -69,39 +73,52 @@ function Devops() {
       description:
         "High-intensity interval training program for maximum calorie burn and endurance building.",
       level: "Advanced",
-      pdf: "sample.pdf",
+      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
     },
     {
-      id: 1,
-      name: "Transformation",
+      id: 4,
+      name: "Advanced HIIT Program",
       image:
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
-        "A comprehensive workout program designed to transform your body and improve overall fitness.",
+        "High-intensity interval training program for maximum calorie burn and endurance building.",
       level: "Intermediate",
-      pdf: "docs/sample.pdf",
+      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
     },
     {
-      id: 2,
-      name: "Core Strength",
+      id: 5,
+      name: "Advanced HIIT Program",
       image:
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
-        "Focus on building core strength and improving overall conditioning through targeted exercises.",
-      level: "Beginner",
-      pdf: "docs/sample.pdf",
+        "High-intensity interval training program for maximum calorie burn and endurance building.",
+      level: "Intermediate",
+      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
     },
     {
-      id: 3,
+      id: 6,
       name: "Advanced HIIT Program",
       image:
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "High-intensity interval training program for maximum calorie burn and endurance building.",
       level: "Advanced",
-      pdf: "sample.pdf",
+      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
     },
+    {
+      id: 7,
+      name: "Advanced HIIT Program",
+      image:
+        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description:
+        "High-intensity interval training program for maximum calorie burn and endurance building.",
+      level: "Advanced",
+      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
+    },
+    // Add more programs if necessary...
   ]);
+
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const getLevelColor = (level) => {
     switch (level.toLowerCase()) {
@@ -116,12 +133,51 @@ function Devops() {
     }
   };
 
+  // Filter the programs based on selected category (level)
+  const filteredPrograms = selectedCategory
+    ? programs.filter((program) => program.level.toLowerCase() === selectedCategory.toLowerCase())
+    : programs;
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <Box sx={{ padding: 4, backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
+      <Box
+        sx={{
+          padding: 4,
+          backgroundColor: "#f5f5f5",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {/* Category Filter Dropdown */}
+        <Box sx={{ mb: 3, width: "200px" }}>
+          <FormControl fullWidth sx={{ height: 56 }}>
+            <InputLabel id="category-select-label">Category</InputLabel>
+            <Select
+              labelId="category-select-label"
+              id="category-select"
+              value={selectedCategory}
+              label="Category"
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              sx={{
+                height: "70%", // Makes sure the Select component inherits the height
+                fontSize: "20px", // Adjust the font size as needed
+                fontWeight: 600,
+              }}
+            >
+              <MenuItem value="">All</MenuItem>
+              <MenuItem value="beginner">Beginner</MenuItem>
+              <MenuItem value="intermediate">Intermediate</MenuItem>
+              <MenuItem value="advanced">Advanced</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+
         <Grid container spacing={4}>
-          {programs.map((program) => (
+          {filteredPrograms.map((program) => (
             <Grid item xs={12} sm={6} md={4} key={program.id}>
               <StyledCard>
                 {/* Program Image */}
@@ -151,19 +207,21 @@ function Devops() {
                       size="small"
                     />
                   </Box>
-                  <Typography variant="body2" color="text.secondary" paragraph>
+                  {/* <Typography variant="body2" color="text.secondary" paragraph>
                     {program.description}
-                  </Typography>
+                  </Typography> */}
                   {/* Button to Open PDF */}
                   <Box sx={{ display: "flex", gap: 2 }}>
                     <StyledButton
                       variant="contained"
                       color="primary"
                       fullWidth
-                      href={program.pdf}
+                      href={`https://drive.google.com/file/d/${program.pdf}/view?usp=sharing`} // Modify this line with the correct file ID
                       target="_blank"
                       aria-label={`Open ${program.name} PDF`}
-                      sx={{ color: "white" }}
+                      sx={{
+                        color: "#fff",
+                      }}
                     >
                       Open PDF
                     </StyledButton>

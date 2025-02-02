@@ -42,6 +42,7 @@ import Billing from "layouts/billing";
 import Custom from "layouts/custom";
 import Devops from "layouts/devops";
 import Link from "layouts/link";
+import Accounts from "layouts/accounts";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
@@ -130,6 +131,14 @@ const routes = [
     icon: <Icon fontSize="small">wifi</Icon>,
     route: "/link",
     component: <Link />,
+  },
+  {
+    type: "collapse",
+    name: "Accounts",
+    key: "Accounts",
+    icon: <Icon fontSize="small">manage_accounts</Icon>,
+    route: "/accounts",
+    component: <Accounts />,
   },
   // {
   //   type: "collapse",
