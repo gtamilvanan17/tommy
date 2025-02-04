@@ -1,23 +1,15 @@
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-
-// Material Dashboard 2 React components
+import React from "react";
+import { Grid, Card, Icon, Select, MenuItem, FormControl, InputLabel, Box } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-
-// Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
+import websiteData from "layouts/linkindex/data/websiteData";
 
-// Data
-import authorsTableData from "layouts/accounts/data/authorsTableData";
-// import projectsTableData from "layouts/accounts/data/projectsTableData";
-
-function Accounts() {
-  const { columns, rows } = authorsTableData();
-  // const { columns: pColumns, rows: pRows } = projectsTableData();
+function Linkindex() {
+  const { columns, rows } = websiteData();
 
   return (
     <DashboardLayout>
@@ -35,10 +27,16 @@ function Accounts() {
                 bgColor="info"
                 borderRadius="lg"
                 coloredShadow="info"
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
               >
-                <MDTypography variant="h6" color="white">
-                  Authors Table
-                </MDTypography>
+                <MDBox display="flex" alignItems="center">
+                  <Icon sx={{ fontSize: "3rem !important", mr: 1, color: "#fff" }}>language</Icon>
+                  <MDTypography variant="h4" color="white">
+                    My Websites
+                  </MDTypography>
+                </MDBox>
               </MDBox>
               <MDBox pt={3}>
                 <DataTable
@@ -58,4 +56,4 @@ function Accounts() {
   );
 }
 
-export default Accounts;
+export default Linkindex;

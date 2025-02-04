@@ -29,6 +29,10 @@ import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import google from "assets/avatar/google.png";
 import slack from "assets/avatar/slack.png";
+import microsoft from "assets/avatar/microsoft.png";
+import instagram from "assets/avatar/instagram.png";
+import netflix from "assets/avatar/netflix.jpeg";
+import apple from "assets/avatar/apple.png";
 
 export default function data() {
   const Author = ({ image, name }) => (
@@ -54,13 +58,19 @@ export default function data() {
     </MDBox>
   );
 
+  const Service = ({ service }) => (
+    <MDBox lineHeight={1} textAlign="left">
+      <MDTypography variant="caption">{service}</MDTypography>
+    </MDBox>
+  );
+
   return {
     columns: [
       { Header: "author", accessor: "author", width: "15%", align: "left" },
       { Header: "email", accessor: "email", width: "25%", align: "center" },
       { Header: "username", accessor: "username", align: "left" },
       { Header: "status", accessor: "status", align: "center" },
-      { Header: "employed", accessor: "employed", align: "center" },
+      { Header: "service", accessor: "service", align: "left" },
       { Header: "action", accessor: "action", align: "center" },
       { Header: "Manage", accessor: "button", align: "center" },
     ],
@@ -75,11 +85,7 @@ export default function data() {
             <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            23/04/18
-          </MDTypography>
-        ),
+        service: <Service service="google" />,
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             Edit
@@ -98,7 +104,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={google} name="Alexa Liras" email="alexa@creative-tim.com" />,
+        author: <Author image={microsoft} name="Alexa Liras" email="alexa@creative-tim.com" />,
         email: <EMAIL email="abc@gmail.com" />,
         username: <Username username="@tommy" />,
         status: (
@@ -106,11 +112,7 @@ export default function data() {
             <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
           </MDBox>
         ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            11/01/19
-          </MDTypography>
-        ),
+        service: <Service service="google" />,
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             Edit
@@ -129,7 +131,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={google} name="Laurent Perrier" email="laurent@creative-tim.com" />,
+        author: <Author image={slack} name="Laurent Perrier" email="laurent@creative-tim.com" />,
         email: <EMAIL email="abc@gmail.com" />,
         username: <Username username="@tommy" />,
         status: (
@@ -137,11 +139,7 @@ export default function data() {
             <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            19/09/17
-          </MDTypography>
-        ),
+        service: <Service service="google" />,
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             Edit
@@ -160,7 +158,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={google} name="Michael Levi" email="michael@creative-tim.com" />,
+        author: <Author image={instagram} name="Michael Levi" email="michael@creative-tim.com" />,
         email: <EMAIL email="abc@gmail.com" />,
         username: <Username username="@tommy" />,
         status: (
@@ -168,11 +166,7 @@ export default function data() {
             <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            24/12/08
-          </MDTypography>
-        ),
+        service: <Service service="google" />,
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             Edit
@@ -191,7 +185,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={google} name="Richard Gran" email="richard@creative-tim.com" />,
+        author: <Author image={netflix} name="Richard Gran" email="richard@creative-tim.com" />,
         email: <EMAIL email="abc@gmail.com" />,
         username: <Username username="@tommy" />,
         status: (
@@ -199,11 +193,7 @@ export default function data() {
             <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
           </MDBox>
         ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            04/10/21
-          </MDTypography>
-        ),
+        service: <Service service="google" />,
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             Edit
@@ -222,7 +212,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={google} name="Miriam Eric" email="miriam@creative-tim.com" />,
+        author: <Author image={apple} name="Miriam Eric" email="miriam@creative-tim.com" />,
         email: <EMAIL email="abc@gmail.com" />,
         username: <Username username="@tommy" />,
         status: (
@@ -230,11 +220,7 @@ export default function data() {
             <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
           </MDBox>
         ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            14/09/20
-          </MDTypography>
-        ),
+        service: <Service service="google" />,
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             Edit
@@ -253,19 +239,15 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={google} name="Miriam Eric" email="miriam@creative-tim.com" />,
+        author: <Author image={google} name="Tommy" email="miriam@creative-tim.com" />,
         email: <EMAIL email="abc@gmail.com" />,
         username: <Username username="@tommy" />,
         status: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
+            <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            14/09/20
-          </MDTypography>
-        ),
+        service: <Service service="google" />,
         action: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             Edit

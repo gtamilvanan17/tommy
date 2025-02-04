@@ -139,7 +139,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
               <MDInput label="Search here" />
             </MDBox>
             <MDBox color={light ? "white" : "inherit"}>
-              <Link to="/authentication/sign-in/basic">
+              <Link to="/authentication/signin/basic">
                 <IconButton sx={{ ...navbarIconButton, fontSize: "2rem" }} size="xl" disableRipple>
                   <Icon sx={iconsStyle} fontSize="inherit">
                     account_circle

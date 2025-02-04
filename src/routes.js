@@ -39,13 +39,13 @@ Coded by www.creative-tim.com
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
-import Custom from "layouts/custom";
+import Linkindex from "layouts/linkindex";
 import Devops from "layouts/devops";
-import Link from "layouts/link";
+import MyWebsites from "layouts/mywebsites";
 import Accounts from "layouts/accounts";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
+import SignIn from "layouts/authentication/signin";
 // import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
@@ -94,7 +94,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Profile",
+    name: "About me",
     key: "profile",
     icon: <Icon fontSize="small">person</Icon>,
     route: "/profile",
@@ -102,19 +102,19 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
-    component: <SignIn />,
+    name: "My Websites",
+    key: "mywebsites",
+    icon: <Icon fontSize="small">language</Icon>,
+    route: "/mywebsites",
+    component: <MyWebsites />,
   },
   {
     type: "collapse",
     name: "Link Index",
-    key: "custom",
+    key: "linkindex",
     icon: <Icon fontSize="small">category</Icon>,
-    route: "/custom",
-    component: <Custom />,
+    route: "/linkindex",
+    component: <Linkindex />,
   },
   {
     type: "collapse",
@@ -123,14 +123,6 @@ const routes = [
     icon: <Icon fontSize="small">wifi</Icon>,
     route: "/devops",
     component: <Devops />,
-  },
-  {
-    type: "collapse",
-    name: "Link",
-    key: "link",
-    icon: <Icon fontSize="small">wifi</Icon>,
-    route: "/link",
-    component: <Link />,
   },
   {
     type: "collapse",
@@ -148,6 +140,14 @@ const routes = [
   //   route: "/authentication/sign-up",
   //   component: <SignUp />,
   // },
+  {
+    type: "collapse",
+    name: "Sign In",
+    key: "signin",
+    icon: <Icon fontSize="small">login</Icon>,
+    route: "/authentication/signin",
+    component: <SignIn />,
+  },
 ];
 
 export default routes;

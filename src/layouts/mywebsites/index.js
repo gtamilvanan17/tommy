@@ -43,7 +43,7 @@ const StyledChip = styled(Chip)({
   margin: "4px",
 });
 
-function Devops() {
+function MyWebsites() {
   const [programs] = useState([
     {
       id: 1,
@@ -52,8 +52,8 @@ function Devops() {
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "A comprehensive workout program designed to transform your body and improve overall fitness.",
-      level: "Intermediate",
-      pdf: "docs/sample.pdf", // Replace with the actual Google Drive file ID
+      level: "DevOps",
+      link: "https://example.com/", // Replace with the actual Google Drive file ID
     },
     {
       id: 2,
@@ -62,8 +62,8 @@ function Devops() {
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Focus on building core strength and improving overall conditioning through targeted exercises.",
-      level: "Beginner",
-      pdf: "docs/sample.pdf", // Replace with the actual Google Drive file ID
+      level: "CTF",
+      link: "https://example.com/", // Replace with the actual Google Drive file ID
     },
     {
       id: 3,
@@ -72,8 +72,8 @@ function Devops() {
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "High-intensity interval training program for maximum calorie burn and endurance building.",
-      level: "Advanced",
-      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
+      level: "General",
+      link: "https://example.com/", // Replace with the actual Google Drive file ID
     },
     {
       id: 4,
@@ -82,8 +82,8 @@ function Devops() {
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "High-intensity interval training program for maximum calorie burn and endurance building.",
-      level: "Intermediate",
-      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
+      level: "Entertainments",
+      link: "https://example.com/", // Replace with the actual Google Drive file ID
     },
     {
       id: 5,
@@ -92,8 +92,8 @@ function Devops() {
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "High-intensity interval training program for maximum calorie burn and endurance building.",
-      level: "Intermediate",
-      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
+      level: "GitHub",
+      link: "https://example.com/", // Replace with the actual Google Drive file ID
     },
     {
       id: 6,
@@ -102,18 +102,8 @@ function Devops() {
         "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "High-intensity interval training program for maximum calorie burn and endurance building.",
-      level: "Advanced",
-      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
-    },
-    {
-      id: 7,
-      name: "Advanced HIIT Program",
-      image:
-        "images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description:
-        "High-intensity interval training program for maximum calorie burn and endurance building.",
-      level: "Advanced",
-      pdf: "1ZrDK4fAfmgN3C1SnvtNBoFGc2Ptw8lEB", // Replace with the actual Google Drive file ID
+      level: "AItools",
+      link: "https://example.com/", // Replace with the actual Google Drive file ID
     },
     // Add more programs if necessary...
   ]);
@@ -122,11 +112,17 @@ function Devops() {
 
   const getLevelColor = (level) => {
     switch (level.toLowerCase()) {
-      case "beginner":
+      case "devops":
+        return "primary";
+      case "ctf":
         return "success";
-      case "intermediate":
+      case "general":
+        return "info";
+      case "entertainments":
         return "warning";
-      case "advanced":
+      case "github":
+        return "secondary";
+      case "aitools":
         return "error";
       default:
         return "default";
@@ -169,9 +165,12 @@ function Devops() {
               }}
             >
               <MenuItem value="">All</MenuItem>
-              <MenuItem value="beginner">Beginner</MenuItem>
-              <MenuItem value="intermediate">Intermediate</MenuItem>
-              <MenuItem value="advanced">Advanced</MenuItem>
+              <MenuItem value="devops">DevOps</MenuItem>
+              <MenuItem value="ctf">CTF Labs</MenuItem>
+              <MenuItem value="general">General</MenuItem>
+              <MenuItem value="entertainments">Entertainments</MenuItem>
+              <MenuItem value="github">Github</MenuItem>
+              <MenuItem value="aitools">AI Tools</MenuItem>
             </Select>
           </FormControl>
         </Box>
@@ -207,23 +206,22 @@ function Devops() {
                       size="small"
                     />
                   </Box>
-                  {/* <Typography variant="body2" color="text.secondary" paragraph>
+                  <Typography variant="body2" color="text.secondary" paragraph>
                     {program.description}
-                  </Typography> */}
+                  </Typography>
                   {/* Button to Open PDF */}
                   <Box sx={{ display: "flex", gap: 2 }}>
                     <StyledButton
                       variant="contained"
                       color="primary"
                       fullWidth
-                      href={`https://drive.google.com/file/d/${program.pdf}/view?usp=sharing`} // Modify this line with the correct file ID
+                      href={`${program.link}`} // Modify this line with the correct file ID
                       target="_blank"
-                      aria-label={`Open ${program.name} PDF`}
                       sx={{
                         color: "#fff",
                       }}
                     >
-                      Open PDF
+                      CLICK ME
                     </StyledButton>
                   </Box>
                 </CardContent>
@@ -236,4 +234,4 @@ function Devops() {
   );
 }
 
-export default Devops;
+export default MyWebsites;
