@@ -2,7 +2,7 @@ name: 🚀 Deploy website - Infinity Server
 on:
   push:
     branches:
-      - master  # Adjust branch as needed
+      - added-auth  # Adjust branch as needed
 jobs:
   web-deploy:
     name: 🎉 Deploy the website
